@@ -1,0 +1,23 @@
+version = 0.1
+[default.pipeline_bootstrap.parameters]
+oidc_provider_url = "https://token.actions.githubusercontent.com"
+oidc_client_id = "sts.amazonaws.com"
+github_org = "cclagunag"
+github_repo = "sam-app"
+deployment_branch = "master"
+oidc_provider = "github-actions"
+permissions_provider = "OpenID Connect (OIDC)"
+
+[dev.pipeline_bootstrap.parameters]
+pipeline_execution_role = "arn:aws:iam::992050069349:role/aws-sam-cli-managed-dev-pipel-PipelineExecutionRole-XdBYlOn96N2W"
+cloudformation_execution_role = "arn:aws:iam::992050069349:role/aws-sam-cli-managed-dev-p-CloudFormationExecutionRo-AhQWE1ZM4QEV"
+artifacts_bucket = "aws-sam-cli-managed-dev-pipeline-r-artifactsbucket-hgbynvpvgywd"
+image_repository = ""
+region = "us-west-2"
+
+[prod.pipeline_bootstrap.parameters]
+pipeline_execution_role = "arn:aws:iam::992050069349:role/aws-sam-cli-managed-prod-pipe-PipelineExecutionRole-85Xx4HErVMBH"
+cloudformation_execution_role = "arn:aws:iam::992050069349:role/aws-sam-cli-managed-prod--CloudFormationExecutionRo-s8ovasLCRM35"
+artifacts_bucket = "aws-sam-cli-managed-prod-pipeline--artifactsbucket-kgb3tfyoypqs"
+image_repository = ""
+region = "us-west-2"
